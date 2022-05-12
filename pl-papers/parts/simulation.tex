@@ -1,0 +1,39 @@
+\chapter {Simulation}
+
+\section{Timeline}
+
+\scalebox{1}{
+\begin{tabular}{r |@{\foo} l}
+
+2010 & Using Domain Specific Languages for Modeling and Simulation \cite{miller2010using} \\
+2011 & Multi-agent System Simulation in Scala: An Evaluation of Actors for Parallel Simulation \cite{todd2011multi}
+
+\end{tabular}
+}
+
+\section {Multi-agent System Simulation in Scala: An Evaluation of Actors for
+Parallel Simulation \cite{todd2011multi}}
+Proposes multi-agent simulation (MAS) in Scala that utilizes the Actor
+framework. Satisfies motivations for removing possibility of race conditions.
+Provides benchmarks comparing Actor framework to threads - Actor framework
+displays slower results, but the prospect of safer simulations justifies the
+slow-down.
+\begin{itemize}
+    \item \question{This design is outdated. What would a modern design look like?}
+    \item \question{Would there be a motivation for simulation for RL agents?}
+    \item Scala's delimited continuations library.
+\end{itemize}
+
+\section {Using Domain Specific Languages for Modeling and Simulation \cite{miller2010using}}
+Gives an overview of the Scalation simulation DSL, implemented in Scala.
+Discusses Scalation motivations and realizations, and how they make it a good
+fit for Scala. Mentions use of Actors for parallel simulation, but does not
+discuss further. System built on event graphs, ``where the nodes represent types
+of events and the edges represent causal links between the events.''
+\begin{itemize}
+    \item \href{https://github.com/scalation/scalation}{https://github.com/scalation/scalation}
+    \item Scala Parser Combinator Library.
+    \item \question{What is the difference between a DSL and a library/ package?}
+    \item Hyrid Functional Petri Nets.
+    \item Fortress.
+\end{itemize}

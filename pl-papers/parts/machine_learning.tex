@@ -1,0 +1,21 @@
+\chapter {Machine Learning}
+
+\section{Timeline}
+
+\scalebox{1}{
+\begin{tabular}{r |@{\foo} l}
+
+2017 & Typesafe Abstractions for Tensor Operations \cite{chen2017typesafe}
+
+\end{tabular}
+}
+
+\section {Typesafe Abstractions for Tensor Operations \cite{chen2017typesafe}}
+Typesafe tensors for tensor operations and machine learning. Tensors created
+with two types, the type (primitives) of the elements, and the phantom types
+used to label dimensions. This allows operations to be checked at compile time
+to ensure that all tensor operations are valid. Typesafe tensors are
+differentiable and can be type-checked. Computation graphs are also typed, and
+inputs/ outputs are also type-checked. Examples given for tensor operations ---
+matrix multiplication, tensor contraction. Examples given for NN layers - FC,
+conv, recurrent (recursive).
