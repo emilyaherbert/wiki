@@ -1,6 +1,6 @@
 # Sway: A Rust-based Smart Contral Language @ EthDenver 2022
 
-Viewable here: https://emilyaherbert.github.io/EthDenver2022/
+Viewable here: https://emilyaherbert.github.io/wiki/talks/2022/EthDenver/
 
 --- 
 ### Template Info

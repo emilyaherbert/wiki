@@ -1,6 +1,6 @@
 # Fuel 🛠 Beyond Monolithic with Fuel, the Fastest Modular Execution @ HackMoney 2022
 
-Viewable here: https://emilyaherbert.github.io/HackMoney2022/
+Viewable here: https://emilyaherbert.github.io/wiki/talks/2022/HackMoney/
 
 To run locally:
 
