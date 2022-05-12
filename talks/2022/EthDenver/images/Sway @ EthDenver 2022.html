@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html class="reveal-full-page print-pdf"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Sway @ EthDenver 2022</title>
+
+		<link rel="stylesheet" href="Sway%20@%20EthDenver%202022_files/reset.css">
+		<link rel="stylesheet" href="Sway%20@%20EthDenver%202022_files/reveal.css">
+		<link rel="stylesheet" href="Sway%20@%20EthDenver%202022_files/blood.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="Sway%20@%20EthDenver%202022_files/monokai.css">
+
+		<style>
+			.boxBorder {
+				border: 2px solid #000000;
+				padding: 5px;
+				outline-offset: 5px;
+			}
+
+			.size {
+				font-size: 30px;
+			}
+
+			.smallersize {
+				font-size: 20px;
+			}
+
+			.circular--square { border-radius: 50%; }
+
+			.container{
+				display: flex;
+			}
+			.col{
+				flex: 1;
+			}
+
+			dd {
+				display: list-item;
+				list-style-type: "+";
+				padding-inline-start: 1ch;
+			}
+
+		</style>
+	<style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style><style type="text/css">@page{size:998px 728px; margin: 0px;}</style><style type="text/css">.reveal section>img, .reveal section>video, .reveal section>iframe{max-width: 960px; max-height:700px}</style></head>
+	<body class="reveal-viewport" style="--slide-width: 960px; --slide-height: 700px; width: 998px; height: 728px;">
+		<div class="reveal slide center focused has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade" style="cursor: none;">
+			<div class="slides">
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				<!-- <section data-markdown="./slides/learn.md"></section> -->
+
+				
+
+				
+			<div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background present" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" class="present" style="display: block; left: 19px; top: 98px; width: 960px;"><h3 id="sway-a-rust-based-smart-contract-language">Sway: A Rust-based Smart Contract Language</h3>
+<h4 id="the-developer-experience">"the developer experience"</h4>
+<p>Emily Herbert</p>
+<p>Fuel Labs</p>
+<img src="Sway%20@%20EthDenver%202022_files/fuel_logo.jpg" alt="Fuel Labs logo" width="100"></section><div class="slide-number slide-number-pdf">1</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 245px; width: 960px;" hidden=""><h3 id="what-is-sway">What is Sway?</h3>
+<p>well, to answer this we need to start with:</p>
+<p>Solidity + Rust</p>
+</section><div class="slide-number slide-number-pdf">2</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 232px; width: 960px;" hidden=""><img src="Sway%20@%20EthDenver%202022_files/solidity_logo.svg" alt="solidity" style="filter: invert(70%);" width="200px">
+
+<p>Language for creating smart contracts:</p>
+<ul class="size">
+    <li>Developed for early EVM</li>
+    <li>Feels similar to Javascript</li>
+    <li>Domain-specific for smart contracts</li>
+</ul>
+
+<aside class="notes"><ul>
+<li>Integrates contract storage as a language construct</li>
+<li>Allows for cross contract calls</li>
+</ul>
+</aside></section><div class="slide-number slide-number-pdf">3</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 222px; width: 960px;" hidden=""><p><img src="Sway%20@%20EthDenver%202022_files/solidity_logo.svg" alt="solidity" style="filter: invert(70%);" width="200px"></p>
+<p>but it has some issues...</p>
+<ul class="size">
+    <li>Solidity docs don't tell you how to do contracts end-to-end</li>
+    <li>Fragmented ecosystem + tooling</li>
+    <li>Lacks many critical safety guarantees</li>
+</ul>
+</section><div class="slide-number slide-number-pdf">4</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 222px; width: 960px;" hidden=""><p><img src="Sway%20@%20EthDenver%202022_files/solidity_logo.svg" alt="solidity" style="filter: invert(70%);" width="200px"></p>
+<p>wide classes of bugs:</p>
+<ul class="size">
+    <li>Reentrancy issues</li>
+    <li>Magic values used for errors</li>
+    <li>"stack too deep" errors...</li>
+</ul>
+</section><div class="slide-number slide-number-pdf">5</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 88.5px; width: 960px;" hidden=""><div class="container">
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/angry_tweet3.png" height="150px">
+</div>
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/angry_tweet.png" height="500px">
+</div>
+
+</div>
+
+<aside class="notes"><p>it kinda works but...</p>
+<p>was designed without knowledge of blockchain smart contract requirements</p>
+</aside></section><div class="slide-number slide-number-pdf">6</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 166.5px; width: 960px;" hidden=""><p>fortunately for us, this has happened before somewhere else:</p>
+<div class="container">
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/cpp_logo.png" height="200px">
+</div>
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/rust_logo.svg" height="200px">
+
+<dl class="smallersize">
+    <dd>Part of developer-focused ecosystem</dd>
+    <dd>Verbose and friendly compiler</dd>
+    <dd>Has extensive toolchain</dd>
+</dl>
+</div>
+
+</div></section><div class="slide-number slide-number-pdf">7</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 327px; width: 960px;" hidden=""><h3 id="what-is-sway">What is Sway?</h3>
+</section><div class="slide-number slide-number-pdf">8</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 92px; width: 960px;" hidden=""><img src="Sway%20@%20EthDenver%202022_files/sway_logo.jpg" class="circular--square" height="180px">
+
+<p>Language for creating smart contracts:</p>
+<ul class="size">
+    <li>Part of the developer-focused Fuel ecosystem</li>
+    <li>Verbose and friendly compiler</li>
+    <li>Packaged with cohesive Sway tooling + language + compiler</li>
+</ul>
+
+<hr>
+<p class="size">
+⚡ in alpha development ⚡
+</p>
+</section><div class="slide-number slide-number-pdf">9</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 248.5px; width: 960px;" hidden=""><img src="Sway%20@%20EthDenver%202022_files/sway_logo.jpg" class="circular--square" height="180px">
+
+<ul class="size">
+    <li>Based on Rust + taking lessons from Solidity</li>
+    <li>"Feels like Rust" but domain-specific for smart contracts</li>
+    <li>Fast and efficient</li>
+</ul>
+</section><div class="slide-number slide-number-pdf">10</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 327px; width: 960px;" hidden=""><h3 id="feels-like-rust">"Feels like Rust"?</h3>
+</section><div class="slide-number slide-number-pdf">11</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 59px; width: 960px;" hidden=""><p class="size">
+variables:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_variables.png" height="100px">
+
+<p class="size">
+functions:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_functions.png" height="250px">
+</section><div class="slide-number slide-number-pdf">12</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 149px; width: 960px;" hidden=""><p class="size">
+structs (with methods):
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_structs.png" height="300px">
+
+<aside class="notes"><img src="Sway%20@%20EthDenver%202022_files/solidity_functions_structs.png" height="180px"></aside></section><div class="slide-number slide-number-pdf">13</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 136.5px; width: 960px;" hidden=""><p class="size">
+enums (sum types):
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_enums.png" height="325px">
+
+<aside class="notes"><img src="Sway%20@%20EthDenver%202022_files/solidity_sum_types.png" height="180px"></aside></section><div class="slide-number slide-number-pdf">14</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 134px; width: 960px;" hidden=""><p class="size">
+domain-specific for smart contracts:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_abi.png" height="100px">
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_store.png" height="100px">
+
+<p class="size">
+and more
+</p>
+</section><div class="slide-number slide-number-pdf">15</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 143.5px; width: 960px;" hidden=""><table>
+  <tbody><tr>
+    <td style="text-align:center"><img src="Sway%20@%20EthDenver%202022_files/sway_logo.jpg" class="circular--square" height="80px"></td>
+    <td style="text-align:center">vs.</td>
+    <td style="text-align:center"><img src="Sway%20@%20EthDenver%202022_files/solidity_logo.svg" alt="solidity" style="filter: invert(70%);" width="100px"></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+        <dl class="size">
+            <dd>Feels like Rust</dd>
+            <dd>Default safe math</dd>
+            <dd>No code size limit</dd>
+            <dd>Modern static type system (Hindley–Milner type system with generics)</dd>
+        </dl>
+    </td>
+  </tr>
+</tbody></table>
+
+<p class="size">
+...plus part of ergonomic Fuel ecosystem 😊
+</p>
+
+<aside class="notes"><img src="Sway%20@%20EthDenver%202022_files/solidity_generics.png" height="180px"></aside></section><div class="slide-number slide-number-pdf">16</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 6.5px; width: 960px;" hidden=""><p>more info about the Sway language:</p>
+<p><a href="https://fuel.network/">fuel.network</a></p>
+<img src="Sway%20@%20EthDenver%202022_files/sway_book.png" height="500px"></section><div class="slide-number slide-number-pdf">17</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 327px; width: 960px;" hidden=""><h3 id="what-is-it-like-to-use-sway">What is it like to use Sway?</h3>
+</section><div class="slide-number slide-number-pdf">18</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 257.5px; width: 960px;" hidden=""><p><code>Forc</code>: the Sway toolchain</p>
+<ul class="size">
+    <li>Project + dependency management system</li>
+    <li>Equivalent of Rust's Cargo</li>
+    <li>"Fuel Orchestrator"</li>
+</ul>
+</section><div class="slide-number slide-number-pdf">19</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 120px; width: 960px;" hidden=""><p class="size">
+install:
+</p>
+
+<pre class="code-wrapper"><code class="bash hljs">$ cargo install forc fuel-core</code></pre><p class="size">
+create a new Sway project:
+</p>
+
+<pre class="code-wrapper"><code class="bash hljs">$ forc init hello_world
+$ <span class="hljs-built_in">cd</span> hello_world
+$ tree .
+.
+├── Cargo.toml
+├── Forc.toml
+├── src
+│&nbsp;&nbsp; └── main.sw
+└── tests
+    └── harness.rs</code></pre></section><div class="slide-number slide-number-pdf">20</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 159.5px; width: 960px;" hidden=""><p class="size">
+Forc.toml:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/forc_toml2.png" height="200px">
+
+<p class="size">
+...btw has Sway has an extensive SDK 😊
+</p>
+
+<aside class="notes"><ul>
+<li>Sway's SDK is modeled after ether.js and ether.rs</li>
+<li>Compiling, deploying, and testing Sway contracts</li>
+<li>Launching a local Fuel network</li>
+<li>Generating type-safe Rust bindings of contract methods</li>
+<li>And more</li>
+</ul>
+</aside></section><div class="slide-number slide-number-pdf">21</div></div><div class="pdf-page" style="height: 1454px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 14px; width: 960px;" hidden=""><p class="size">
+src/main.sw:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/test_contract.png" height="600px">
+</section><div class="slide-number slide-number-pdf">22</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 75.5px; width: 960px;" hidden=""><p class="size">
+start a Fuel full node:
+</p>
+
+<pre class="code-wrapper"><code class="bash hljs">$ fuel-core
+Feb 15 13:29:40.508  INFO fuel_core::service::graph_api: Binding GraphQL provider to 127.0.0.1:4000</code></pre><p class="size">
+build the project:
+</p>
+
+<pre class="code-wrapper"><code class="bash hljs">$ forc build
+  Compiled library <span class="hljs-string">"core"</span>.
+  Compiled library <span class="hljs-string">"lib-std"</span>.
+  Compiled script <span class="hljs-string">"test_counter"</span>.
+  Bytecode size is 248 bytes.</code></pre><p class="size">
+deploy the contract:
+</p>
+
+<pre class="code-wrapper"><code class="bash hljs">$ forc deploy
+Contract id: 0x9da075b76e379ac9276dfbd7d6270f5059270aae1679e64bae983b495e01d101
+Logs:
+HexString256(HexFormatted(0xb57db3004cad1b72157286b78ab904e30161964eff1caf56a1ae5cffa8e3bd83))</code></pre></section><div class="slide-number slide-number-pdf">23</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 24px; width: 960px;" hidden=""><p class="size">
+test/harness.rs:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/test_contract_test.png" height="550px">
+</section><div class="slide-number slide-number-pdf">24</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 133px; width: 960px;" hidden=""><p class="size">
+test the project:
+</p>
+
+<pre class="code-wrapper"><code class="bash hljs">$ forc <span class="hljs-built_in">test</span>
+running 1 <span class="hljs-built_in">test</span>
+  Compiled library <span class="hljs-string">"core"</span>.
+  Compiled library <span class="hljs-string">"lib-std"</span>.
+  Compiled script <span class="hljs-string">"test_counter"</span>.
+  Bytecode size is 248 bytes.
+<span class="hljs-built_in">test</span> harness ... ok
+
+<span class="hljs-built_in">test</span> result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished <span class="hljs-keyword">in</span> 0.47s</code></pre><p class="size">
+automatically format Sway code:
+</p>
+
+<pre class="code-wrapper"><code class="bash hljs">$ forc fmt</code></pre></section><div class="slide-number slide-number-pdf">25</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 327px; width: 960px;" hidden=""><h3 id="friendly-compiler-">"friendly compiler" ?</h3>
+</section><div class="slide-number slide-number-pdf">26</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 304px; width: 960px;" hidden=""><ul class="size">
+    <li>Compiler messages are instructive and helpful</li>
+    <li>Warnings and errors are specific to smart contracts</li>
+    <li>Compiler detects smart contract bugs (e.g. reentrancy)</li>
+
+</ul></section><div class="slide-number slide-number-pdf">27</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 134.5px; width: 960px;" hidden=""><p class="size">
+Sway code:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_match_code.png" height="250px">
+
+<p class="size">
+...btw Sway has match expressions 😊
+</p>
+</section><div class="slide-number slide-number-pdf">28</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 164px; width: 960px;" hidden=""><p class="size">
+Sway compiler:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_match_error.png" height="250px">
+
+<aside class="notes"><p class="size">
+Solidity:
+</p>
+
+<p><img src="Sway%20@%20EthDenver%202022_files/solidity_switch.png" height="180px"></p></aside><p></p>
+</section><div class="slide-number slide-number-pdf">29</div></div><div class="pdf-page" style="height: 1454px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 14px; width: 960px;" hidden=""><p class="size">
+Sway code:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_decrement_counter.png" height="325px">
+
+<p class="size">
+Sway compiler:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/sway_cei_error.png" height="125px">
+
+<p>Note:</p>
+<p class="size">
+Solidity:
+</p>
+
+<img src="Sway%20@%20EthDenver%202022_files/solidity_reentrancy_bug.png" height="50px">
+
+<!--
+Note: 
+imagine you have this generic function:
+
+```rust
+fn two_of_the_same<T>(a: T, b: T) -> T {
+    b
+}
+
+fn main() {
+    let foo = two_of_the_same(1, 2);
+    let bar = two_of_the_same(1, false);
+}
+```
+
+<p class="size">
+...btw Sway has generics 😊
+</p>
+
+<img src="./images/solidity_generics.png" height=180px />
+
+then the Sway compiler would tell you this:
+<img src="./images/sway_generics.png" height=200px />
+--></section><div class="slide-number slide-number-pdf">30</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 327px; width: 960px;" hidden=""><h3 id="fuel-ecosystem">"Fuel ecosystem"?</h3>
+</section><div class="slide-number slide-number-pdf">31</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 18.5px; width: 960px;" hidden=""><p><strong>Sway</strong></p>
+<p class="size">
+the smart contract language for the FuelVM
+</p>
+
+<dl class="smallersize">
+    <dd>Forc: the Sway toolchain</dd>
+    <dd>friendly compiler</dd>
+    <dd>built-in testing infra</dd>
+    <dd>extensive SDK</dd>
+    <dd>VSCode plugin</dd>
+    <dd>language server (since May 2021)</dd>
+    <dd>built-in debugger + gas profiling + code coverage (WIP)</dd>
+</dl>
+
+<hr>
+<p><strong>FuelVM</strong></p>
+<p class="size">
+a blockchain-optimized VM
+</p>
+
+<hr>
+<p><strong>Fuel</strong></p>
+<p>the fastest modular execution layer</p>
+</section><div class="slide-number slide-number-pdf">32</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 257px; width: 960px;" hidden=""><h3 id="whats-next-for-sway">What's next for Sway?</h3>
+<ul class="size">
+    <li>Active development</li>
+    <li>Interacting with the community</li>
+    <li>Adoption via awesome developer experience</li>
+</ul>
+</section><div class="slide-number slide-number-pdf">33</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 88.5px; width: 960px;" hidden=""><div class="container">
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/fuel_contributors1.png" height="500px">
+</div>
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/fuel_contributors2.png" height="500px">
+</div>
+
+</div>
+</section><div class="slide-number slide-number-pdf">34</div></div><div class="pdf-page" style="height: 727px; background: rgb(34, 34, 34) none repeat scroll 0% 0%;"><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><section data-markdown="" data-markdown-parsed="true" aria-hidden="true" class="present" style="display: block; left: 19px; top: 123.5px; width: 960px;" hidden=""><h3 id="thank-you">Thank you!</h3>
+<div class="container">
+
+<div class="col">
+<div class="container">
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/fuel_logo.jpg" alt="Fuel Labs logo" width="100">
+</div>
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/sway_logo.jpg" alt="Fuel Labs logo" class="circular--square" width="100">
+</div>
+
+</div>
+
+<p><a href="https://fuel.network/">fuel.network</a></p>
+</div>
+
+<div class="col">
+<img src="Sway%20@%20EthDenver%202022_files/twitter_logo.png" height="100px">
+
+<p>Fuel: <a href="https://twitter.com/fuellabs_">@fuellabs_</a></p>
+<p>Sway: <a href="https://twitter.com/SwayLang">@SwayLang</a></p>
+<p>me: <a href="https://twitter.com/emilyaherbert">@emilyaherbert</a></p>
+</div>
+
+</div></section><div class="slide-number slide-number-pdf">35</div></div></div>
+		<div class="backgrounds"></div><div class="slide-number" style="display: none;"><a href="#/">
+					<span class="slide-number-a">1</span>
+					</a></div><aside class="controls" style="display: block;" data-controls-layout="bottom-right" data-controls-back-arrows="faded"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-right enabled highlight" aria-label="next slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="progress" style="display: block;"><span style="transform: scaleX(0);"></span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);" class="aria-status" aria-live="polite" aria-atomic="true">Sway: A Rust-based Smart Contract Language "the developer experience" Emily Herbert Fuel Labs </div></div>
+
+		<script src="Sway%20@%20EthDenver%202022_files/reveal.js"></script>
+		<script src="Sway%20@%20EthDenver%202022_files/notes.js"></script>
+		<script src="Sway%20@%20EthDenver%202022_files/markdown.js"></script>
+		<script src="Sway%20@%20EthDenver%202022_files/highlight.js"></script>
+
+		<script>
+			/*
+			Language: Sway
+			Author: Fuel Labs contact@fuel.sh
+			Contributors: Fuel Labs <contact@fuel.sh>,
+			Website: https://fuel.sh
+			Category: smart contracts, layer 2, blockchain,
+			*/
+
+			import * as regex from '../lib/regex.js';
+
+			/** @type LanguageFn */
+			function hljsDefineSway(hljs) {
+			const FUNCTION_INVOKE = {
+				className: "title.function.invoke",
+				relevance: 0,
+				begin: regex.concat(
+				/\b/,
+				/(?!let\b)/,
+				hljs.IDENT_RE,
+				regex.lookahead(/\s*\(/))
+			};
+			const NUMBER_SUFFIX = '([u](8|16|32|64))\?';
+
+			const KEYWORDS = [
+				"abi",
+				"as",
+				"asm",
+				"const",
+				"contract",
+				"deref",
+				"enum",
+				"fn",
+				"if",
+				"impl",
+				"let",
+				"library",
+				"match",
+				"mut",
+				"else",
+				"predicate",
+				"ref",
+				"return",
+				"script",
+				"Self",
+				"self",
+				"str",
+				"struct",
+				"trait",
+				"use",
+				"where",
+				"while",
+				"storage",
+			];
+			const LITERALS = [
+				"true",
+				"false",
+			];
+			const BUILTINS = [
+				
+			];
+			const TYPES = [
+				"bool", "char", "u8", "u16", "u32", "u64", "b256", "str", "Self"
+			];
+			return {
+				name: 'Sway',
+				aliases: [ 'sw' ],
+				keywords: {
+					$pattern: hljs.IDENT_RE + '!?',
+					type: TYPES,
+					keyword: KEYWORDS,
+					literal: LITERALS,
+					built_in: BUILTINS
+				},
+				illegal: '</',
+				contains: [
+				hljs.C_LINE_COMMENT_MODE,
+				hljs.COMMENT('/\\*', '\\*/', {
+					contains: [ 'self' ]
+				}),
+				hljs.inherit(hljs.QUOTE_STRING_MODE, {
+					begin: /b?"/,
+					illegal: null
+				}),
+				{
+					className: 'string',
+					variants: [
+					{
+						begin: /b?r(#*)"(.|\n)*?"\1(?!#)/
+					},
+					{
+						begin: /b?'\\?(x\w{2}|u\w{4}|U\w{8}|.)'/
+					}
+					]
+				},
+				{
+					className: 'symbol',
+					begin: /'[a-zA-Z_][a-zA-Z0-9_]*/
+				},
+				{
+					className: 'number',
+					variants: [
+					{
+						begin: '\\b0b([01_]+)' + NUMBER_SUFFIX
+					},
+					{
+						begin: '\\b0o([0-7_]+)' + NUMBER_SUFFIX
+					},
+					{
+						begin: '\\b0x([A-Fa-f0-9_]+)' + NUMBER_SUFFIX
+					},
+					{
+						begin: '\\b(\\d[\\d_]*(\\.[0-9_]+)?([eE][+-]?[0-9_]+)?)' +
+							NUMBER_SUFFIX
+					}
+					],
+					relevance: 0
+				},
+				{
+					begin: [
+					/fn/,
+					/\s+/,
+					hljs.UNDERSCORE_IDENT_RE
+					],
+					className: {
+					1: "keyword",
+					3: "title.function"
+					}
+				},
+				{
+					begin: [
+					/(let|const)/, /\s+/,
+					/(?:mut\s+)?/,
+					hljs.UNDERSCORE_IDENT_RE
+					],
+					className: {
+					1: "keyword",
+					3: "keyword",
+					4: "variable"
+					}
+				},
+				{
+					begin: [
+					/type/,
+					/\s+/,
+					hljs.UNDERSCORE_IDENT_RE
+					],
+					className: {
+					1: "keyword",
+					3: "title.class"
+					}
+				},
+				{
+					begin: [
+					/(?:trait|enum|struct|impl|for|library|abi)/,
+					/\s+/,
+					hljs.UNDERSCORE_IDENT_RE
+					],
+					className: {
+					1: "keyword",
+					3: "title.class"
+					}
+				},
+				{
+					begin: hljs.IDENT_RE + '::',
+					keywords: {
+					keyword: "Self",
+					built_in: BUILTINS
+					}
+				},
+				{
+					className: "punctuation",
+					begin: '->'
+				},
+				FUNCTION_INVOKE
+				]
+			};
+			}
+			
+			module.exports = function(hljs) {
+				hljs.registerLanguage('sway', hljsDefineSway);
+			};
+			
+			module.exports.definer = hljsDefineSway;
+			  </script>
+				<script type="text/javascript">
+					window.hljs.registerLanguage('sway', window.hljsDefineSway);
+					window.hljs.highlightAll();
+				</script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
+				// Display the page number of the current slide
+				// - true:    Show slide number
+				// - false:   Hide slide number
+				//
+				// Can optionally be set as a string that specifies the number formatting:
+				// - "h.v":   Horizontal . vertical slide number (default)
+				// - "h/v":   Horizontal / vertical slide number
+				// - "c":   Flattened slide number
+				// - "c/t":   Flattened slide number / total slides
+				//
+				// Alternatively, you can provide a function that returns the slide
+				// number for the current slide. The function should take in a slide
+				// object and return an array with one string [slideNumber] or
+				// three strings [n1,delimiter,n2]. See #formatSlideNumber().
+				slideNumber: true,
+			});
+		</script>
+	<script src="Sway%20@%20EthDenver%202022_files/livereload.js" async="" defer="defer"></script>
+
+</body></html>
