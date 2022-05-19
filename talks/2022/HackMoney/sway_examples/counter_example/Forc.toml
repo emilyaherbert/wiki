@@ -5,6 +5,6 @@ license = "Apache-2.0"
 name = "counter_example"
 
 [dependencies]
-#std = { git = "http://github.com/FuelLabs/sway" }
-#core = { git = "http://github.com/FuelLabs/sway" }
+std = { git = "http://github.com/FuelLabs/sway" }
+core = { git = "http://github.com/FuelLabs/sway" }
 
