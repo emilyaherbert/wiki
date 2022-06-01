@@ -18,6 +18,17 @@ abi CounterContract {
 }
 
 impl CounterContract for Contract {
+    #[storage(read, write)]
+    fn decrement(n: u64) -> Result<u64, str[4]> {
+        if storage.apples >= n {
+            let new_value = storage.apples - n;
+            storage.apples = new_value;
+            Result::Ok(new_value)
+        } else {
+            Result::Err("fail")
+        }
+    }
+
     #[storage(write)]
     fn initialize() {
         storage.apples = 0;
@@ -31,17 +42,6 @@ impl CounterContract for Contract {
     #[storage(read)]
     fn get() -> u64 {
         storage.apples
-    }
-
-    #[storage(read, write)]
-    fn decrement(n: u64) -> Result<u64, str[4]> {
-        if storage.apples >= n {
-            let new_value = storage.apples - n;
-            storage.apples = new_value;
-            Result::Ok(new_value)
-        } else {
-            Result::Err("fail")
-        }
     }
 }
 
