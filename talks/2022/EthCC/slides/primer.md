@@ -14,7 +14,8 @@
 to create a project:
 
 ```bash
-$ forc init --contract
+$ forc new --name token --contract
+$ cd token/
 $ tree .
 .
 ├── Cargo.toml
@@ -116,3 +117,9 @@ fn get_from_number(n: u64) -> bool {
     storage.my_map.get(n)
 }
 ```
+
+<p class="size">
+Want to know more about the design of Sway?
+
+<a href="https://fuel.network/">fuel.network</a>
+</p>

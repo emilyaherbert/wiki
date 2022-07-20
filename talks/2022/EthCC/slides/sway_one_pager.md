@@ -21,6 +21,8 @@
 
 <div class="col">
 <img src="./images/fuel_logo.png" height=200px alt="Fuel"/>
+
+[fuel.network](https://fuel.network/)
 </div>
 
 </div>
