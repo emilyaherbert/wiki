@@ -1,26 +1,12 @@
 ### Install Cargo
 
-1. use rustup: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
-
-2. check for correct setup:
-
-    ```bash
-    $ cargo --version
-    cargo 1.62.0
-    ```
+use rustup: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
 
 ---
 
 ### Install Forc
 
-3. use fuelup: [https://tinyurl.com/install-fuelup](https://tinyurl.com/install-fuelup)
-
-4. check for correct setup:
-
-    ```bash
-    $ forc --version
-    forc 0.18.1
-    ```
+use fuelup: [https://tinyurl.com/install-fuelup](https://tinyurl.com/install-fuelup)
 
 ---
 
