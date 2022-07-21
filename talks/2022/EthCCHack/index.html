@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Fuel @ EthCCHack 2022</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/blood.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			.boxBorder {
+				border: 2px solid #000000;
+				padding: 5px;
+				outline-offset: 5px;
+			}
+
+			.size {
+				font-size: 30px;
+			}
+
+			.smallersize {
+				font-size: 20px;
+			}
+
+			.circular--square {
+				border-radius: 50%;
+			}
+
+			.container {
+				display: flex;
+				align-items: center; 
+				text-align: center;
+			}
+
+			.container2 {
+				display: flex;
+				align-items: top; 
+				text-align: center;
+			}
+
+			.col {
+				flex: 1;
+				align-items: center; 
+   				justify-content: center;
+			}
+
+			.reveal table td {
+				border-bottom: 0px;
+				align-items: center;
+				text-align: center;
+				padding: 0.0em 0.0em 0.0em 0.0em;
+				border-spacing: 0px;
+			}
+
+			.reveal table {
+				border-spacing: 0px;
+			}
+
+			dd {
+				display: list-item;
+				list-style-type: "+";
+				padding-inline-start: 1ch;
+			}
+
+			.reveal .footer {
+				position: absolute;
+				bottom: 1em;
+				left: 1em;
+				font-size: 1em;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class='footer'>
+				materials: <a href="https://github.com/emilyaherbert/EthCCHack-Workshop">github.com/emilyaherbert/EthCCHack-Workshop</a>
+			</div>
+
+			<div class="slides">
+				<section data-markdown="./slides/title.md"></section>
+				<section data-markdown="./slides/install.md"></section>
+				<section data-markdown="./slides/sway_one_pager.md"></section>
+				<section data-markdown="./slides/primer.md"></section>
+				<section data-markdown="./slides/workshop.md"></section>
+				<section data-markdown="./slides/thanks.md"></section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
+				// Display the page number of the current slide
+				// - true:    Show slide number
+				// - false:   Hide slide number
+				//
+				// Can optionally be set as a string that specifies the number formatting:
+				// - "h.v":   Horizontal . vertical slide number (default)
+				// - "h/v":   Horizontal / vertical slide number
+				// - "c":   Flattened slide number
+				// - "c/t":   Flattened slide number / total slides
+				//
+				// Alternatively, you can provide a function that returns the slide
+				// number for the current slide. The function should take in a slide
+				// object and return an array with one string [slideNumber] or
+				// three strings [n1,delimiter,n2]. See #formatSlideNumber().
+				slideNumber: true,
+			});
+		</script>
+	</body>
+</html>
