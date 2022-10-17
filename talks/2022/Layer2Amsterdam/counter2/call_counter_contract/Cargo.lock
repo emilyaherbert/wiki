@@ -528,6 +528,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f4710dc03ceb8748637775692c"
 
 [[package]]
+name = "call_counter_contract"
+version = "0.1.0"
+dependencies = [
+ "fuel-gql-client",
+ "fuel-tx 0.7.0",
+ "fuels-abigen-macro",
+ "fuels-contract",
+ "fuels-core",
+ "fuels-signers",
+ "rand 0.8.5",
+ "tokio",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.73"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -690,20 +704,6 @@ name = "core-foundation-sys"
 version = "0.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5827cebf4670468b8772dd191856768aedcb1b0278a04f989f7766351917b9dc"
-
-[[package]]
-name = "counter_example"
-version = "0.1.0"
-dependencies = [
- "fuel-gql-client",
- "fuel-tx 0.7.0",
- "fuels-abigen-macro",
- "fuels-contract",
- "fuels-core",
- "fuels-signers",
- "rand 0.8.5",
- "tokio",
-]
 
 [[package]]
 name = "cpufeatures"
