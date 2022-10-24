@@ -11,6 +11,14 @@ Sway and Forc (and more!)
 <p><img src="./images/sway_logo.png" height=200px alt="Sway" class="circular--square"/></p>
 <p class="smallersize">(^^^ Sway logo)</p>
 
+Note:
+
+* One common issue developers face when working within the Ethereum ecosystem is how to choose a set of tools to get started
+* leaving the job of creating accessible, high-level tooling to the community
+* Developers can get everything they need to start creating Sway applications for the Fuel VM with a single toolchain, blessed by the same teams that create the FuelVM and Sway language.
+* Fuel Labs take a curated, "batteries-included"-yet-modular approach to providing tooling
+* We aim to provide a comprehensive, standardized, canonical set of tools that cover not only the lower levels of the stack (like protocol and VM implementations) but the higher level too (such as package management, editor support, common-use plugins and much more)
+
 ---
 
 <div class="container">
@@ -97,161 +105,7 @@ Plus, because its written in Rust:
 
 ---
 
-<div class="container">
-
-<div class="col">
-<h3>🏛️ # 3:</h3>
-
-<p class="size">
-superior developer experience (with Sway and Forc)
-</p>
-</div>
-
-<div class="col">
-<table>
-    <tr>
-        <td>
-            <div class="container">
-                <div class="col">Sway and Forc</div>
-                <div class="col">
-                    <img src="./images/sway_logo.png" width=50px class="circular--square"/>
-                </div>
-            </div>
-            <p class="smallersize">
-            smart-contract language and developer experience
-            </p>
-            <p class="smallersize">
-            ⚡ in active development ⚡
-            </p>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="./images/right_arrow.png" width=25px alt="<-" style="filter: invert(70%); transform: rotate(90deg);"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        FuelVM
-        <p class="smallersize">
-        blockchain-optimized VM
-        </p>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="./images/right_arrow.png" width=25px alt="<-" style="filter: invert(70%); transform: rotate(90deg);"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="container">
-                <div class="col">Fuel</div>
-                <div class="col">
-                    <img src="./images/fuel_logo.png" width=50px alt="Fuel Labs logo"/>
-                </div>
-            </div>
-            <p class="smallersize">
-            the fastest modular execution layer
-            </p>
-        </td>
-    </tr>
-</table>
-</div>
-
-</div>
-
----
-
-<div class="container">
-  <div class="col">
-    <img src="./images/cpp_logo.png" height=400px alt="C++"/>
-  </div>
-  <div class="col">
-    <img src="./images/rust_logo.png" height=350px alt="Rust"/>
-  </div>
-</div>
-
-Note:
-
-C++ is powerful and allows users to manage memory themselves, but creates a wide class of memory management bugs
-
-Chromium did an analysis of all of the serious security bugs, and found that 70% were memory management bugs (i.e. bugs involving pointers)
-
-Rust also:
-* Part of developer-focused ecosystem
-* Verbose and friendly compiler
-* Has extensive toolchain
-
-Motivated by both Solidity and Rust:
-Combines first-class smart contract and blockchain support
-With the design philosophy of Rust
-
----
-
-<img src="./images/sway_logo.png" height=400px alt="Sway" class="circular--square"/>
-
-Note:
-
-Motivated by both Solidity and Rust:
-Combines first-class smart contract and blockchain support
-With the design philosophy of Rust
-
----
-
-<div class="container">
-  <div class="col">
-    <img src="./images/solidity_logo.png" height=200px alt="Solidity" style="filter: invert(70%);"/>
-  </div>
-  <div class="col">
-    <img src="./images/right_arrow.png" height=100px alt="->" style="filter: invert(70%);"/>
-  </div>
-  <div class="col">
-    <img src="./images/sway_logo.png" height=200px alt="Sway" class="circular--square"/>
-  </div>
-</div>
-
-<dl class="size">
-    <dd>“domain-specific”</dd>
-    <dd>first-class smart contracts</dd>
-    <dd>blockchain support</dd>
-    <dd>contract storage as language construct</dd>
-    <dd>sharable contract interfaces</dd>
-</dl>
-
----
-
-<div class="container">
-  <div class="col">
-    <img src="./images/sway_logo.png" height=200px alt="Sway" class="circular--square"/>
-  </div>
-  <div class="col">
-    <img src="./images/right_arrow.png" height=100px alt="->" style="filter: invert(70%); transform: rotate(180deg);"/>
-  </div>
-  <div class="col">
-    <img src="./images/rust_logo.png" height=200px alt="Rust"/>
-  </div>
-</div>
-
-<dl class="size">
-    <dd>“feels like Rust”</dd>
-    <dd>static types with trait-based inheritance</dd>
-    <dd>verbose and friendly compiler</dd>
-    <dd>unified tooling and developer experience</dd>
-    <dd>team organization</dd>
-</dl>
-
-Note:
-
-Plus, because its written in Rust:
-* fast and efficient
-* easily auditable
-
----
-
-### Sway feels like Rust?
-
----
+### Sway:
 
 <p class="size">
 variables:
@@ -343,29 +197,6 @@ Sway also has panic and revert
 
 ---
 
-### Sway is domain-specific?
-
----
-
-<p class="size">
-Sway primitive types:
-</p>
-
-<ul class="smallersize">
-    <li>unsigned integers</li>
-    <li>booleans</li>
-    <li>static-length strings</li>
-    <li>32-byte values</li>
-    <li>single-byte values</li>
-    <li>the unit type</li>
-</ul>
-
-Note:
-
-Plus tuple types and user-defined structs and enums
-
----
-
 <p class="size">
 first-class contracts:
 </p>
@@ -406,10 +237,88 @@ The annotation provides some guarantees:
 
 ---
 
+### The Fuel toolchain:
+
+<p class="size">tooling:</p>
+
+<ul class="smallersize">
+    <li>`forc`: fuel project orchestrator</li>
+    <li>`fuel-core`: FuelVM node client</li>
+    <li>Fuel indexer: used to index components of the blockchain</li>
+</ul>
+
+<p class="size">plugins and more tooling!</p>
+
+<ul class="smallersize">
+    <li>`forc-fmt`: Sway code formatter</li>
+    <li>`forc-lsp`: Sway Language Server Protocol implementation</li>
+    <li>`forc-explore`: Fuel block explorer</li>
+    <li>`forc-client`: for deploying and running Sway apps via the CLI</li>
+    <li>`forc-wallet`: initializing a wallet, adding accounts and signing transactions</li>
+    <li>`fuelup`: Fuel toolchain manager</li>
+</ul>
+
+<p class="size">and VSCode and vim plugins 😊</p>
+
+---
+
+<div class="container">
+
+<div class="col">
+<h3>🏛️ # 3:</h3>
+
 <p class="size">
-and much more:
-
-[fuel.network](https://fuel.network/)
+superior developer experience
 </p>
+</div>
 
-<img src="./images/sway_book.png" height=500px />
+<div class="col">
+<table>
+    <tr>
+        <td>
+            <div class="container">
+                <div class="col">Sway and Forc</div>
+                <div class="col">
+                    <img src="./images/sway_logo.png" width=50px class="circular--square"/>
+                </div>
+            </div>
+            <p class="smallersize">
+            smart-contract language and developer experience
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="./images/right_arrow.png" width=25px alt="<-" style="filter: invert(70%); transform: rotate(90deg);"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        FuelVM
+        <p class="smallersize">
+        blockchain-optimized VM
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="./images/right_arrow.png" width=25px alt="<-" style="filter: invert(70%); transform: rotate(90deg);"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="container">
+                <div class="col">Fuel</div>
+                <div class="col">
+                    <img src="./images/fuel_logo.png" width=50px alt="Fuel Labs logo"/>
+                </div>
+            </div>
+            <p class="smallersize">
+            the fastest modular execution layer
+            </p>
+        </td>
+    </tr>
+</table>
+</div>
+
+</div>

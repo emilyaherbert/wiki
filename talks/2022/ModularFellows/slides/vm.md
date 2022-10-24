@@ -16,6 +16,10 @@
 
 Note:
 
+Fuel uses a similar model to Ethereum for contracts and cross-contract calls. Contracts may call other contracts with a CALL (similar to an Ethereum message call). Unlike the EVM, which can only forward its base asset with a call (i.e. ETH), the FuelVM can forward a single native fungible asset with a call.
+
+Transactions may initiate contract calls. Ethereum transactions may call a single contract directly. Fuel transactions instead execute a script (arbitrary bytecode attached to the transaction), which may call any number of contracts.
+
 * The EVM is a complicated machine to construct fraud proofs for. It usually requires a second layer such as WASM or MIPS to be interpreted into a fraud provable system
 
 

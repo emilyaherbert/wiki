@@ -18,8 +18,6 @@
 
 ---
 
-### Projects building on fuel:
-
 <div class="container">
 
 <div class="col">
