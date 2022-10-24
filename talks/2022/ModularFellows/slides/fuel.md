@@ -14,7 +14,7 @@ the three Fuel 🏛️:
 <div class="col">
 <dl class="size">
     <dd>fixes problem #1 the scalability crisis</dd>
-    <dd>fixes problem #1 the scalability crisis</dd>
+    <dd>the link between ⬆️ and ⬇️</dd>
     <dd>fixes problem #2 poor developer experience</dd>
 </dl> 
 </div>

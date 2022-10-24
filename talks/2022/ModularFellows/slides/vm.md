@@ -1,17 +1,28 @@
 ### 🏛️ # 2: the Fuel Virtual Machine
 
-<p class="size">the FuelVM learns from the past to build something better</p>
+<p class="size">the link between the Fuel UTXO-based parallel execution transaction design and the developer</p>
+
+<ul class="smallersize">
+    <li>the FuelVM learns from the past to build something better</li>
+    <li>designed from the ground up to optimized for UTXO-based architecture and fraud-provability</li>
+    <li>designed from the ground up to be vertically integrated with the Fuel toolchain</li>
+</ul>
+
+---
+
+<p class="size">similarities to the EVM:</p>
+<ul class="smallersize">
+    <li>similar model for contracts and cross-contract calls</li>
+    <li>contracts may call other contracts with a CALL (similar to message call)</li>
+</ul>
 
 <p class="size">differences from the EVM:</p>
 <ul class="smallersize">
-    <li>the FuelVM is designed for fraud-provability, from the start</li>
-    <li>built with an atomic UTXO paradigm from the start</li>
     <li>built-in support for working with custom native assets (including ETH!)</li>
+    <li>the FuelVM has scripts, removing the need for approve/transferFrom</li>
     <li>globally shared memory architecture instead of context-local memory</li>
-    <li>the FuelVM has scripts, removing the need for approve/transferFrom UX</li>
-    <li>64-bit words instead of 256-bit</li>
-    <li>register-based instead of stack-based</li>
     <li>implements several EIPs that the EVM is not able to implement</li>
+    <li>and more!</li>
 </ul>
 
 Note:

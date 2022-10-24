@@ -2,6 +2,8 @@
 
 <p class="size">Fuel is designed to be fraud-provable, which enables support for trust-minimized light clients</p>
 
+<p class="size">other blockchains have used honest-majority light clients:</p>
+
 <div class="container">
 <div class="col">
 <img src="./images/client_network.png" height=350px/>
@@ -62,14 +64,16 @@ Because Fuel was built for fraud proofs, the resource requirements for full node
 
 ### Fuel's design: UTXO
 
-<p class="size">Unspent Transaction Output model for accounting</p>
+<p class="size">Unspent Transaction Output model for accounting with trust-minimized light clients:</p>
+
+<p class="smallersize">protocol for distributing data based on the amount of currency that remains after a transaction</p>
 
 <div class="container2">
 <div class="smallcol">
-<img src="./images/utxo.png" height=325px/>
+<img src="./images/utxo.png" height=300px/>
 </div>
 <div class="smallcol">
-<img src="./images/utxo_graph.jpg" height=250px/>
+<img src="./images/utxo_graph.jpg" height=225px/>
 </div>
 </div>
 
@@ -77,7 +81,7 @@ Because Fuel was built for fraud proofs, the resource requirements for full node
 
 ---
 
-Accounting model:
+Accounting model with honest-majority light clients:
 
 <img src="./images/account_model.jpg" height=400px/>
 

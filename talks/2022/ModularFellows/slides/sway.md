@@ -1,6 +1,6 @@
 ### 🏛️ # 3: superior developer experience
 
-Sway and Forc (and more!)
+<p class="size">devex-first, from the start</p>
 
 <ul class="smallersize">
     <li>Sway is a Rust-inspired smart contract language</li>
@@ -20,6 +20,8 @@ Note:
 * We aim to provide a comprehensive, standardized, canonical set of tools that cover not only the lower levels of the stack (like protocol and VM implementations) but the higher level too (such as package management, editor support, common-use plugins and much more)
 
 ---
+
+### Sway:
 
 <div class="container">
   <div class="col">
@@ -104,8 +106,6 @@ Plus, because its written in Rust:
 * easily auditable
 
 ---
-
-### Sway:
 
 <p class="size">
 variables:

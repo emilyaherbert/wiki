@@ -1,6 +1,6 @@
 ### True modularity:
 
-<p class="size">Fuel modular and is designed to operate in multiple different configurations:</p>
+<p class="size">Fuel is modular and designed to operate in multiple different configurations:</p>
 
 <div class="container">
 
@@ -10,9 +10,8 @@
 <div class="col">
 <ul class="smallersize">
     <li>L1</li>
-    <li>rollup</li>
-    <li>state channel</li>
-    <li>side chain</li>
+    <li>classical rollup</li>
+    <li>sovereign rollup</li>
 </ul>
 
 </div>
