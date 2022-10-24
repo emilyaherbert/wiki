@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="col">Sway and Forc</div>
                 <div class="col">
-                    <img src="./images/sway_logo.jpg" width=50px alt="Sway" class="circular--square"/>
+                    <img src="./images/sway_logo.png" width=50px alt="Sway" class="circular--square"/>
                 </div>
             </div>
             <p class="smallersize">
@@ -64,7 +64,3 @@
 </div>
 
 </div>
-
----
-
-<img src="./images/hackathon.png" height="500px"/>

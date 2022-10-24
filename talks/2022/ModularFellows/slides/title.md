@@ -1,5 +1,5 @@
-### Beyond Monolithic with Fuel
-#### the Fastest Modular Execution Layer
+## Introduction to Fuel
+#### let's get modular 😊
 
 Emily Herbert
 

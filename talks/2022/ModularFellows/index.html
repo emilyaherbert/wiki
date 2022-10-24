@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Fuel + Modular Fellows 2022</title>
+		<title>Fuel @ Celestia Modular Fellows 2022</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -42,12 +42,36 @@
 				display: flex;
 				align-items: top; 
 				text-align: center;
+				display:inline-block;
 			}
 
 			.col {
 				flex: 1;
 				align-items: center; 
    				justify-content: center;
+			}
+
+			.smallcol {
+				flex: 1;
+				align-items: center; 
+   				justify-content: center;
+				font-size: 30px;
+				display:inline-block;
+				margin: 30px;
+			}
+
+			.line {
+				display: inline-block;
+				height: 100px;
+				width: 0;
+				border: 1px solid white;
+			}
+
+			.line2 {
+				display: inline-block;
+				height: 200px;
+				width: 0;
+				border: 1px solid white;
 			}
 
 			.reveal table td {
@@ -64,7 +88,7 @@
 
 			dd {
 				display: list-item;
-				list-style-type: "+";
+				list-style-type: "->";
 				padding-inline-start: 1ch;
 			}
 
@@ -74,12 +98,13 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown="./slides/title.md"></section>
+				<section data-markdown="./slides/the_problems.md"></section>
 				<section data-markdown="./slides/fuel.md"></section>
 				<section data-markdown="./slides/execution.md"></section>
-				<section data-markdown="./slides/vm.md"></section>
 				<section data-markdown="./slides/sway.md"></section>
 				<section data-markdown="./slides/counter_example.md"></section>
 				<section data-markdown="./slides/wrapping_up.md"></section>
+				<section data-markdown="./slides/who_is_building.md"></section>
 				<section data-markdown="./slides/thanks.md"></section>
 			</div>
 		</div>
@@ -87,13 +112,16 @@
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>  
 
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				hash: true,
+				width: '100%',
+				height: '100%',
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
@@ -115,6 +143,6 @@
 				// three strings [n1,delimiter,n2]. See #formatSlideNumber().
 				slideNumber: true,
 			});
-		</script>
+		</script>	
 	</body>
 </html>

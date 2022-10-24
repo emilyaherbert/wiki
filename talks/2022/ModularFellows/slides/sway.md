@@ -15,7 +15,7 @@ superior developer experience (with Sway and Forc)
             <div class="container">
                 <div class="col">Sway and Forc</div>
                 <div class="col">
-                    <img src="./images/sway_logo.jpg" width=50px class="circular--square"/>
+                    <img src="./images/sway_logo.png" width=50px class="circular--square"/>
                 </div>
             </div>
             <p class="smallersize">
@@ -115,7 +115,7 @@ With the design philosophy of Rust
 
 ---
 
-<img src="./images/sway_logo.jpg" height=400px alt="Sway" class="circular--square"/>
+<img src="./images/sway_logo.png" height=400px alt="Sway" class="circular--square"/>
 
 Note:
 
@@ -133,7 +133,7 @@ With the design philosophy of Rust
     <img src="./images/right_arrow.png" height=100px alt="->" style="filter: invert(70%);"/>
   </div>
   <div class="col">
-    <img src="./images/sway_logo.jpg" height=200px alt="Sway" class="circular--square"/>
+    <img src="./images/sway_logo.png" height=200px alt="Sway" class="circular--square"/>
   </div>
 </div>
 
@@ -149,7 +149,7 @@ With the design philosophy of Rust
 
 <div class="container">
   <div class="col">
-    <img src="./images/sway_logo.jpg" height=200px alt="Sway" class="circular--square"/>
+    <img src="./images/sway_logo.png" height=200px alt="Sway" class="circular--square"/>
   </div>
   <div class="col">
     <img src="./images/right_arrow.png" height=100px alt="->" style="filter: invert(70%); transform: rotate(180deg);"/>
