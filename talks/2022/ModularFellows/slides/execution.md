@@ -41,11 +41,94 @@ Important:
 
 ---
 
+<p class="size">Fuel’s design lets light clients say that blocks are valid through fraud proofs</p>
+
 <div class="container">
 <div class="col">
-<img src="./images/client_network2.png" height=400px/>
+<img src="./images/client_network2.png" height=450px/>
 </div>
 <div class="col">
-<img src="./images/client_tradeoff2.png" height=400px/>
+<img src="./images/client_tradeoff2.png" height=450px/>
 </div>
+</div>
+
+<p class="smallersize">"trust-minimized light clients are secure under the assumption that only a single honest full node is available in the network to produce fraud proofs"<p>
+
+Note:
+
+Because Fuel was built for fraud proofs, the resource requirements for full nodes can be higher, thus increasing bandwidth capacity while still allowing users to verify the chain through trust-minimized light clients.
+
+---
+
+### Fuel's design: UTXO
+
+<p class="size">Unspent Transaction Output model for accounting</p>
+
+<div class="container2">
+<div class="smallcol">
+<img src="./images/utxo.png" height=325px/>
+</div>
+<div class="smallcol">
+<img src="./images/utxo_graph.jpg" height=250px/>
+</div>
+</div>
+
+<p class="smallersize">you can tell visually what state a transaction is touching from visually looking at the transaction<p>
+
+---
+
+Accounting model:
+
+<img src="./images/account_model.jpg" height=400px/>
+
+<p class="smallersize">check their proof-of-work (PoW) by calculating a global state tree<p>
+
+---
+
+### Fuel's design: parallel execution
+
+<div class="container">
+<div class="col">
+<ul class="smallersize">
+    <li>EVM---you have to execute transactions sequentially</li>
+    <li>UTXO---can identify transaction dependencies through what is known as state access lists</li>
+    <li>Fuel---can identify the accounts that a transaction touches, mapping out dependencies before execution</li>
+    <li>Fuel---can use far more threads and cores of your CPU that are typically idle in single-threaded blockchains</li>
+</ul>
+</div>
+<div class="col">
+<img src="./images/fuel_parallel.png" height=350px/>
+</div>
+</div>
+
+---
+
+<div class="container">
+
+<div class="col">
+<h3>🏛️ # 1:</h3>
+
+<p class="size">
+UTXO-based parallel transaction execution
+</p>
+</div>
+
+<div class="col">
+<table>
+    <tr>
+        <td>
+            <div class="container">
+                <div class="col">Fuel</div>
+                <div class="col">
+                    <img src="./images/fuel_logo.png" width=50px alt="Fuel Labs logo"/>
+                </div>
+            </div>
+            <p class="smallersize">
+            the fastest modular execution layer
+            </p>
+        </td>
+    </tr>
+</table>
+</div>
+
 </div>
