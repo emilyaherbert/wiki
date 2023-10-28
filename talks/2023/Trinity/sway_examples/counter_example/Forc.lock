@@ -1,0 +1,20 @@
+[[package]]
+name = 'core'
+dependencies = []
+
+[[package]]
+name = 'core'
+source = 'git+http://github.com/FuelLabs/sway?default-branch#5e91232cba032219fcfd159aac6b44eb4441452d'
+dependencies = []
+
+[[package]]
+name = 'counter_example'
+dependencies = [
+    'core git+http://github.com/FuelLabs/sway?default-branch#5e91232cba032219fcfd159aac6b44eb4441452d',
+    'std git+http://github.com/FuelLabs/sway?default-branch#5e91232cba032219fcfd159aac6b44eb4441452d',
+]
+
+[[package]]
+name = 'std'
+source = 'git+http://github.com/FuelLabs/sway?default-branch#5e91232cba032219fcfd159aac6b44eb4441452d'
+dependencies = ['core']
