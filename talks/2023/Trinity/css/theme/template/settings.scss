@@ -18,7 +18,7 @@ $headingFont: 'League Gothic', Impact, sans-serif;
 $headingColor: #eee;
 $headingLineHeight: 1.2;
 $headingLetterSpacing: normal;
-$headingTextTransform: none;
+$headingTextTransform: uppercase;
 $headingTextShadow: none;
 $headingFontWeight: normal;
 $heading1TextShadow: $headingTextShadow;
@@ -37,6 +37,11 @@ $linkColorHover: lighten( $linkColor, 20% );
 // Text selection
 $selectionBackgroundColor: #FF5E99;
 $selectionColor: #fff;
+
+// Colors used for UI elements that are overlaid on top of
+// the presentation
+$overlayElementBgColor: 240, 240, 240;
+$overlayElementFgColor: 0, 0, 0;
 
 // Generates the presentation background, can be overridden
 // to return a background image or gradient

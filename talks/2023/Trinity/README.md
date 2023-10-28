@@ -1,10 +1,10 @@
-# Fuel 🛠
+# why I went to grad school... and then why I left grad school
 
-Viewable here: https://emilyaherbert.github.io/wiki/talks/2022/ModularFellows/
+Viewable here: https://emilyaherbert.github.io/wiki/talks/2023/Trinity/
 
 To run locally:
 
-`yarn start`
+`npm install && npm start`
 
 then navigate to `localhost:8000`
 

@@ -26,7 +26,7 @@ html * {
   --r-heading-color: #586e75;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
-  --r-heading-text-transform: none;
+  --r-heading-text-transform: uppercase;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
   --r-heading1-text-shadow: none;
@@ -40,6 +40,8 @@ html * {
   --r-link-color-hover: #78b9e6;
   --r-selection-background-color: #d33682;
   --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 0, 0, 0;
+  --r-overlay-element-fg-color: 240, 240, 240;
 }
 
 .reveal-viewport {

@@ -1,98 +1,17 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Fuel @ Celestia Modular Fellows 2022</title>
+		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/blood.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-
-		<style>
-			.boxBorder {
-				border: 2px solid #000000;
-				padding: 5px;
-				outline-offset: 5px;
-			}
-
-			.size {
-				font-size: 30px;
-			}
-
-			.smallersize {
-				font-size: 20px;
-			}
-
-			.circular--square {
-				border-radius: 50%;
-			}
-
-			.container {
-				display: flex;
-				align-items: center; 
-				text-align: center;
-			}
-
-			.container2 {
-				display: flex;
-				align-items: top; 
-				text-align: center;
-				display:inline-block;
-			}
-
-			.col {
-				flex: 1;
-				align-items: center; 
-   				justify-content: center;
-			}
-
-			.smallcol {
-				flex: 1;
-				align-items: center; 
-   				justify-content: center;
-				font-size: 30px;
-				display:inline-block;
-				margin: 30px;
-			}
-
-			.line {
-				display: inline-block;
-				height: 100px;
-				width: 0;
-				border: 1px solid white;
-			}
-
-			.line2 {
-				display: inline-block;
-				height: 200px;
-				width: 0;
-				border: 1px solid white;
-			}
-
-			.reveal table td {
-				border-bottom: 0px;
-				align-items: center;
-				text-align: center;
-				padding: 0.0em 0.0em 0.0em 0.0em;
-				border-spacing: 0px;
-			}
-
-			.reveal table {
-				border-spacing: 0px;
-			}
-
-			dd {
-				display: list-item;
-				list-style-type: "->";
-				padding-inline-start: 1ch;
-			}
-
-		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -113,37 +32,17 @@
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>  
-
+		<script src="plugin/highlight/highlight.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-				width: '100%',
-				height: '100%',
-				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-
-				// Display the page number of the current slide
-				// - true:    Show slide number
-				// - false:   Hide slide number
-				//
-				// Can optionally be set as a string that specifies the number formatting:
-				// - "h.v":   Horizontal . vertical slide number (default)
-				// - "h/v":   Horizontal / vertical slide number
-				// - "c":   Flattened slide number
-				// - "c/t":   Flattened slide number / total slides
-				//
-				// Alternatively, you can provide a function that returns the slide
-				// number for the current slide. The function should take in a slide
-				// object and return an array with one string [slideNumber] or
-				// three strings [n1,delimiter,n2]. See #formatSlideNumber().
-				slideNumber: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
-		</script>	
+		</script>
 	</body>
 </html>
