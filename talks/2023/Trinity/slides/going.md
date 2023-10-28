@@ -16,7 +16,7 @@ the year is 2018...
 
 ---
 
-### *WORSE* reasons to go to grad school:
+### *"so-so"* reasons to go to grad school:
 
 <ul>
     <li>you really like going to school</li>
@@ -98,13 +98,78 @@ the year is 2018...
         </td>
         <td>
             <p>
-            → direct to PhD (with incidental Master's) ←
+            → direct to PhD ←
             </p>
             <ul class="size">
                 <li>research-focused</li>
                 <li>paid (but not the big bucks)</li>
                 <li>classes are "free"</li>
+                <li>incidental Master's after ~2 years ⭐</li>
             </ul>
+        </td>
+    </tr>
+</table>
+
+---
+
+### lots of valid paths!
+
+<table>
+    <tr>
+        <td>
+            <p>
+            "there's a topic I'm interested in working on"
+            </p>
+        </td>
+        <td>
+            →
+        </td>
+        <td>
+            direct to PhD
+        </td>
+        <td>
+            →
+        </td>
+        <td>
+            career as researcher
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+            "I like going to school but I don't know if I like research"
+            </p>
+        </td>
+        <td>
+            →
+        </td>
+        <td>
+            direct to PhD
+        </td>
+        <td>
+            →
+        </td>
+        <td>
+            leave after 2 years with Master's
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+            "the job I want doesn't require a grad degree"
+            </p>
+        </td>
+        <td>
+            →
+        </td>
+        <td>
+            job
+        </td>
+        <td>
+            →
+        </td>
+        <td>
+            maybe grad school later
         </td>
     </tr>
 </table>
