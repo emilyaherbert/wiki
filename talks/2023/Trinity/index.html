@@ -38,14 +38,31 @@
 		.reveal table {
 			border-spacing: 0px;
 		}
+
+		.special-header {
+			position: absolute;
+			padding: 10px 20px 10px 20px;
+			top:30px;
+			left: 0px;
+			z-index:500;
+			/*background-color: rgba(0,0,0,0.5)*/
+		}
+
+		.special-body {
+			margin: auto;
+			position: absolute;
+			top: 50%;
+			left: 0%;
+			/*-ms-transform: translate(-50%, 50%);*/
+			transform: translate(0%, -50%);
+		}
 	</style>
 
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown="./slides/intro.md"></section>
-				<section data-markdown="./slides/going.md"></section>
-				<section data-markdown="./slides/leaving.md"></section>
+				<section data-markdown="./slides/body.md"></section>
 			</div>
 		</div>
 

@@ -17,8 +17,8 @@ Emily Herbert
             </p>
         </td>
         <td>
-            <p style="color:chartreuse;">
-            + some technical stuff
+            <p>
+            + some technical stuff 👩‍💻
             </p>
         </td>
     </tr>
@@ -29,8 +29,8 @@ Emily Herbert
             </p>
         </td>
         <td>
-            <p style="color:chartreuse;">
-            + some technical stuff
+            <p>
+            + some technical stuff 👩‍💻
             </p>
         </td>
     </tr>
