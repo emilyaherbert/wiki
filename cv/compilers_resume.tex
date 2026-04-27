@@ -59,18 +59,10 @@ BoldItalicFont=FreeSerifBoldItalic]
 
 \firstname{Emily} % Your first name
 \familyname{Herbert} % Your last name
-
-% All information in this block is optional, comment out any lines you don't need
-%\title{Curriculum Vitae}
-%\address{123 Broadway}{City, State 12345}
-%\mobile{(000) 111 1111}
-%\phone{}
-%\fax{(000) 111 1113}
 \email{herbert.emilyanne.jobs@gmail.com}
 \homepage{emilyaherbert.com}{emilyaherbert.com} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
 \extrainfo{\href{https://www.github.com/emilyaherbert}{{github.com/emilyaherbert}}}
-%\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
-%\quote{"A witty and playful quotation" - John Smith}
+\quote{Product and compiler engineer focused on execution systems, AI infrastructure, and developer-facing tooling and interaction design.}
 
 %----------------------------------------------------------------------------------------
 
@@ -104,12 +96,21 @@ BoldItalicFont=FreeSerifBoldItalic]
 %	CURRICULUM VITAE
 %----------------------------------------------------------------------------------------
 
-\maketitle % Print the CV title
+\renewcommand*{\quotestyle}[1]{{\vspace*{-0.5cm}\quotefont\textcolor{color1}{#1}}}
 
-\vspace{-1.4cm}
+\patchcmd{\recomputecvlengths}{%
+  \setlength{\quotewidth}{0.65\textwidth}%
+}{%
+  \setlength{\quotewidth}{0.9\textwidth}%
+}{}{}
+
+\makecvtitle % Print the CV title
+
+\vspace{-1cm}
 \input{parts/education.tex}
-\input{parts/skills_condensed.tex}
-\input{parts/relevant_experience.tex}
+\input{parts/compilers_relevent_experience.tex}
+\input{parts/compilers_talks_publications.tex}
+\input{parts/compilers_skills.tex}
 %\input{parts/research_experience.tex}
 %\input{parts/teaching_experience.tex}
 %\input{parts/awards_scholarships.tex}
